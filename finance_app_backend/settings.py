@@ -76,13 +76,9 @@ WSGI_APPLICATION = 'finance_app_backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd16rnhh45q25u4',
-        'USER': 'wounthpcycbdkh',
-        'PASSWORD': '427ebb4541b372bb3ef3ae70deacebb97f9cfcdd5965c61b50b7f488ab9b0f1d', 
-        'HOST': 'ec2-54-220-19-50.eu-west-1.compute.amazonaws.com',  
-        'PORT': '5432',          
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
     }
 }
 
