@@ -8,6 +8,12 @@ from .models import User, Stock, Transaction
 class UserCreateView(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        email = self.request.query_params.get('email')
+        if email:
+            queryset = queryset.filter(email=email)
+        return queryset
 
 
 class StockCreateView(generics.ListCreateAPIView):
@@ -16,5 +22,9 @@ class StockCreateView(generics.ListCreateAPIView):
 
 
 class TransactionCreateView(generics.ListCreateAPIView):
-    queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
+    def get_queryset(self):
+        user_id = self.request.query_params.get('user_id')
+        if user_id is not None:
+            return Transaction.objects.filter(user_id=user_id)
+        return Transaction.objects.all()

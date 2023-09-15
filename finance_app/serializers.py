@@ -15,16 +15,8 @@ class StockSerializer(serializers.ModelSerializer):
 
 
 class TransactionSerializer(serializers.ModelSerializer):
+    stock = StockSerializer(source='stock_id', read_only=True)
     class Meta:
         model = Transaction
-        fields = '__all__'
+        fields = ('id', 'user_id', 'stock_id', 'volume', 'purchase_price', 'created_at', 'stock')
 
-# class OrderItemSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = OrderItem
-#         fields = '__all__'
-
-# class EmployeeEmailSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = EmployeeEmail
-#         fields = '__all__'

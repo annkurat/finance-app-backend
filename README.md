@@ -1,4 +1,13 @@
-# Finance app backend
+# Finance App — Backend
+
+Hello 👋
+The backend part for this project is provided here: https://annkurat.github.io/finance-app-frontend/. For the application to fully function, you first need to clone the backend repository
+
+```bash
+git clone https://github.com/annkurat/finance-app-backend
+```
+
+and then start the server on http://127.0.0.1:8000/.
 
 ## Installation
 
