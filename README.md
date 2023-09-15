@@ -17,6 +17,10 @@ and then start the server on http://127.0.0.1:8000/.
 pip install virtualenv
 ```
 
+```bash
+virtualenv venv
+```
+
 #### 2. Activate virtual environment:
 
 For Windows:
